@@ -1,0 +1,14 @@
+apiVersion: kpack.io/v1alpha1
+kind: Image
+metadata:
+  name: spring-petclinic-image
+spec:
+  tag: dev.registry.pivotal.io/tanzu-advanced-edition/swatkins/spring-petclinic-steve1
+  serviceAccount: default
+  builder:
+    kind: ClusterBuilder
+    name: default
+  source:
+    git:
+      url: https://github.com/badraoul/spring-pet-clinic-steve1
+      revision: main
